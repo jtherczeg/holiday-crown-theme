@@ -1,0 +1,54 @@
+{# Note: Only one levels of sublinks are supported by Bootstrap 3 #}
+{% set
+    links = {
+	    'home':      ['home', 'Home'],
+		'rooms':     ['samples/rooms', 'Rooms & Tariffs'],
+		'intro':     ['samples/intro', 'Introduction'],
+		'gallery':   ['samples/gallery', 'Gallery'],
+        'contact':   ['samples/contact', 'Contact'],
+    }
+%}
+
+{% macro render_menu(links) %}
+    {% for code, link in links %}
+        <li class="{{ code == currentPage ? 'active' }} {{ link.sublinks ? 'dropdown' }}">
+            <a
+                href="{{ link.sublinks ? '#' : (link.page ?: link[0])|page }}"
+                {% if link.sublinks %}data-toggle="dropdown"{% endif %}
+                class="{{ link.sublinks ? 'dropdown-toggle' }}"
+            >
+                {{ link.name ?: link[1] }}
+                {% if link.sublinks %}<span class="caret"></span>{% endif %}
+            </a>
+            {% if link.sublinks %}
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    {{ _self.render_menu(link.sublinks) }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as nav %}
+
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo.png'|theme }}"  alt="holiday crown"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav">        
+        {{ nav.render_menu(links) }}
+      </ul>
+    </div><!-- Wnavbar-collapse -->
+  </div><!-- container-fluid -->

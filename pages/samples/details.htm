@@ -1,0 +1,34 @@
+title = "Rooms Details"
+url = "/rooms-details"
+layout = "default"
+description = "Rooms details"
+==
+<div class="container">
+
+<h1 class="title">Luxurious Suites</h1>
+
+ <!-- RoomDetails -->
+            <div id="RoomDetails" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                <div class="item active"><img src="{{ 'assets/images/photos/8.jpg'|theme }}" class="img-responsive" alt="slide"></div>
+                <div class="item  height-full"><img src="{{ 'assets/images/photos/9.jpg'|theme }}"  class="img-responsive" alt="slide"></div>
+                <div class="item  height-full"><img src="{{ 'assets/images/photos/10.jpg'|theme }}"  class="img-responsive" alt="slide"></div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#RoomDetails" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                <a class="right carousel-control" href="#RoomDetails" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+            </div>
+  <!-- RoomCarousel-->
+
+<div class="room-features spacer">
+    <div class="row">
+      <div class="col-sm-12 col-md-5">
+          {% content 'room/desc.htm' %}
+      </div>
+      <div class="col-sm-6 col-md-3 amenitites">
+          {% content 'room/features.htm' %}
+      </div>
+        {% content 'room/prices.htm' %}
+    </div>
+</div>
+</div>

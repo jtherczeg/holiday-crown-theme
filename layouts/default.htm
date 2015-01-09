@@ -1,0 +1,64 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+{% partial "meta" %}
+
+
+<body id="home">
+
+<!-- header -->
+<nav class="navbar  navbar-default" role="navigation">
+    {% partial "nav" %}
+</nav>
+<!-- header -->
+    
+{% page %}
+
+<!--bottom-->
+<footer class="spacer">
+    {% partial "bottom" %}
+</footer>
+<!--bottom-->
+
+<!--footer-->
+<div class="text-center copyright">
+    {% partial "footer" %}
+</div>
+<!--footer-->
+
+<a href="#home" class="toTop scroll"><i class="fa fa-angle-up"></i></a>
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
+</div>
+
+<script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+<!-- wow script -->
+<script src="{{ 'assets/vendor/wow/wow.min.js'|theme }}"></script>
+<!-- uniform -->
+<script src="{{ 'assets/vendor/uniform/js/jquery.uniform.js'|theme }}"></script>
+<!-- boostrap -->
+<script src="{{ 'assets/vendor/bootstrap/js/bootstrap.js'|theme }}" type="text/javascript" ></script>
+<!-- jquery mobile -->
+<script src="{{ 'assets/vendor/mobile/touchSwipe.min.js'|theme }}"></script>
+<!-- jquery mobile -->
+<script src="{{ 'assets/vendor/respond/respond.js'|theme }}"></script>
+<!-- gallery -->
+<script src="{{ 'assets/vendor/gallery/jquery.blueimp-gallery.min.js'|theme }}"></script>
+<!-- custom script -->
+<script src="{{ 'assets/js/script.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+
+
+</body>
+</html>

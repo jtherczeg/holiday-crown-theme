@@ -1,0 +1,14 @@
+name: Holiday Crown
+code: holidaycrown
+description: Free Bootstrap powered theme for hotels and accomodation business, ported for OctoberCMS
+author:  Amit Bajracharya &amp; József Tamás Herczeg
+authorUrl: 'http://thebootstrapthemes.com/'
+
+# [...]
+
+form:
+    fields:
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            default: Holiday Crown
