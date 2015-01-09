@@ -3,6 +3,8 @@ HOLIDAY CROWN
 
 Holiday Crown is a free, responsive, Bootstrap 3 powered theme for hotels and the accomodation business, ported from The Bootstrap Themes' HTML template for OctoberCMS. No 3rd party extensions are supported.
 
+![Screenshot](https://raw.githubusercontent.com/jtherczeg/holiday-crown-theme/master/assets/images/theme-preview.png)
+
 Features
 --------
 * Responsive design
